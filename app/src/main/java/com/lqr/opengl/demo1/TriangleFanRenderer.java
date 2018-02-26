@@ -26,14 +26,14 @@ public class TriangleFanRenderer extends BaseRenderer {
         gl.glEnableClientState(GL10.GL_VERTEX_ARRAY);
         // 开启颜色缓冲区
         gl.glEnableClientState(GL10.GL_COLOR_ARRAY);
-        // 设置颜色着色模式，默认是平滑着色模式：GL10.GL_SMOOTH
-        gl.glShadeModel(GL10.GL_FLAT);// 修改为单调着色模式
     }
 
     @Override
     public void onDrawFrame(GL10 gl) {
         // 清除颜色缓冲区
         gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+        // 设置颜色着色模式，默认是平滑着色模式：GL10.GL_SMOOTH
+        gl.glShadeModel(GL10.GL_FLAT);// 修改为单调着色模式
         // 设置眼球位置与观察点
         gl.glMatrixMode(GL10.GL_MODELVIEW);
         gl.glLoadIdentity();
