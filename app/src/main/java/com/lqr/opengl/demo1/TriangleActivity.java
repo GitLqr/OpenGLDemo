@@ -12,6 +12,7 @@ public class TriangleActivity extends BaseActivity {
     @Override
     protected BaseRenderer getRenderer() {
 //        return new TriangleRenderer();
-        return new TriangleStripRenderer();
+//        return new TriangleStripRenderer();
+        return new TriangleFanRenderer();
     }
 }
