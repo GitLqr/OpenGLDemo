@@ -15,7 +15,15 @@ import javax.microedition.khronos.opengles.GL10;
 /**
  * @创建者 CSDN_LQR
  * @时间 2018/2/26
- * @描述 使用三角形扇绘制棱锥(加上 底面 + 深度测试)
+ * @描述 使用三角形扇绘制棱锥(加上 底面 + 深度测试 + 剔除)
+ *
+ * 深度测试：启用z轴，使得绘制有层次，符合物理世界现象。
+ * -------1）开启：gl.glEnable(GL10.GL_DEPTH_TEST);
+ * -------2）清除深度缓冲区：gl.glClear(GL10.GL_DEPTH_BUFFER_BIT);
+ * 剔除：减少不必要的绘制，提高深度测试性能。
+ * -------1）开启：gl.glEnable(GL10.GL_CULL_FACE);
+ * -------2）设置表面：gl.glFrontFace(GL10.GL_CCW);// CCW：逆时针 ；CW：顺时针
+ * -------3）剔除某一面：gl.glCullFace(GL10.GL_BACK);// GL_BACK：背面 ；GL_FRONT：前面
  */
 public class TriangleFanRenderer1 extends BaseRenderer {
 
@@ -37,6 +45,13 @@ public class TriangleFanRenderer1 extends BaseRenderer {
         gl.glShadeModel(GL10.GL_FLAT);// 修改为单调着色模式
         // 开启深度测试（不开启的话，在应该看不到锥面的时候，锥面还是会被绘制出来）
         gl.glEnable(GL10.GL_DEPTH_TEST);
+
+        // 开启剔除
+        gl.glEnable(GL10.GL_CULL_FACE);
+        // 设置逆时针绘制为表面
+        // CCW：counter clock wise --> 逆时针
+        // CW：clock wise --> 顺时针
+        gl.glFrontFace(GL10.GL_CCW);
 
         // 设置眼球位置与观察点
         gl.glMatrixMode(GL10.GL_MODELVIEW);
@@ -108,12 +123,14 @@ public class TriangleFanRenderer1 extends BaseRenderer {
         }
 
         // 绘制锥面
+        gl.glCullFace(GL10.GL_BACK);// 剔除背面
         ByteBuffer colorBuffer = BufferUtil.list2Buffer(colors);
         gl.glColorPointer(4, GL10.GL_FLOAT, 0, colorBuffer);
         gl.glVertexPointer(3, GL10.GL_FLOAT, 0, BufferUtil.list2Buffer(topCoords));
         gl.glDrawArrays(GL10.GL_TRIANGLE_FAN, 0, topCoords.size() / 3);
 
         // 绘制锥底
+        gl.glCullFace(GL10.GL_FRONT);// 剔除前面（注意：我们看到棱锥的底是背面）
         colorBuffer = BufferUtil.list2Buffer(colors.subList(4, colors.size()));
         gl.glColorPointer(4, GL10.GL_FLOAT, 0, colorBuffer);
         gl.glVertexPointer(3, GL10.GL_FLOAT, 0, BufferUtil.list2Buffer(bottomCoords));

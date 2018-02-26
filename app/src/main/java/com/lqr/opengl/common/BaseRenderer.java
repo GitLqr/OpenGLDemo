@@ -12,6 +12,7 @@ import javax.microedition.khronos.opengles.GL10;
 public abstract class BaseRenderer implements GLSurfaceView.Renderer{
     public float mRotateX = 0;
     public float mRotateY = 0;
+    public float ratio;
 
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
@@ -26,7 +27,7 @@ public abstract class BaseRenderer implements GLSurfaceView.Renderer{
         gl.glViewport(0, 0, width, height);
         gl.glMatrixMode(GL10.GL_PROJECTION);
         gl.glLoadIdentity();
-        float ratio = (float) width / (float) height;
+        ratio = (float) width / (float) height;
         gl.glFrustumf(-ratio, ratio, -1f, 1f, 3f, 7f);
     }
 }
