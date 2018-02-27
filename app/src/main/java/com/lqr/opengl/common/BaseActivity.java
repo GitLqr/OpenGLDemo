@@ -30,7 +30,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        float step = 1f;
+        float step = 5f;
         if (event.getAction() == KeyEvent.ACTION_DOWN) {
             switch (keyCode) {
                 case KeyEvent.KEYCODE_DPAD_UP:

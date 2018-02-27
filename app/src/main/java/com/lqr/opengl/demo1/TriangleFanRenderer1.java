@@ -16,7 +16,7 @@ import javax.microedition.khronos.opengles.GL10;
  * @创建者 CSDN_LQR
  * @时间 2018/2/26
  * @描述 使用三角形扇绘制棱锥(加上 底面 + 深度测试 + 剔除)
- *
+ * <p>
  * 深度测试：启用z轴，使得绘制有层次，符合物理世界现象。
  * -------1）开启：gl.glEnable(GL10.GL_DEPTH_TEST);
  * -------2）清除深度缓冲区：gl.glClear(GL10.GL_DEPTH_BUFFER_BIT);
@@ -131,7 +131,8 @@ public class TriangleFanRenderer1 extends BaseRenderer {
 
         // 绘制锥底
         gl.glCullFace(GL10.GL_FRONT);// 剔除前面（注意：我们看到棱锥的底是背面）
-        colorBuffer = BufferUtil.list2Buffer(colors.subList(4, colors.size()));
+//        colorBuffer = BufferUtil.list2Buffer(colors.subList(4, colors.size()));// 可以手动移除前一个颜色，再重新生成字节缓冲数据
+        colorBuffer.position(4 * 4);// 也可以对旧数据重新指定读取位置，因为 1个float = 4个byte，而一个颜色由4个float组成，所以指定从第二个颜色开始的话，需要指定偏移16个byte。
         gl.glColorPointer(4, GL10.GL_FLOAT, 0, colorBuffer);
         gl.glVertexPointer(3, GL10.GL_FLOAT, 0, BufferUtil.list2Buffer(bottomCoords));
         gl.glDrawArrays(GL10.GL_TRIANGLE_FAN, 0, bottomCoords.size() / 3);

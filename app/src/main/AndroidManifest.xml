@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.lqr.opengl">
+          package="com.lqr.opengl">
 
     <application
         android:allowBackup="true"
@@ -18,10 +18,14 @@
         <activity android:name=".demo3.LineActivity">
         </activity>
         <activity android:name=".demo4.ScissorsActivity">
+        </activity>
+        <activity android:name=".demo5.StencilActivity">
+        </activity>
+        <activity android:name=".demo6.BallActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
     </application>
