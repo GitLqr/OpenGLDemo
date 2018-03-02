@@ -42,4 +42,33 @@ public class BufferUtil {
         ibb.position(0);
         return ibb;
     }
+
+    /**
+     * 将float数组转成Float缓冲
+     *
+     * @param arr
+     * @return
+     */
+    public static FloatBuffer arr2FloatBuffer(float[] arr) {
+        ByteBuffer ibb = ByteBuffer.allocateDirect(arr.length * 4);
+        ibb.order(ByteOrder.nativeOrder());
+        FloatBuffer fbb = ibb.asFloatBuffer();
+        fbb.put(arr);
+        fbb.position(0);
+        return fbb;
+    }
+
+    /**
+     * 将byte数组转成字节缓冲
+     *
+     * @param arr
+     * @return
+     */
+    public static ByteBuffer arr2Buffer(byte[] arr) {
+        ByteBuffer ibb = ByteBuffer.allocateDirect(arr.length);
+        ibb.order(ByteOrder.nativeOrder());
+        ibb.put(arr);
+        ibb.position(0);
+        return ibb;
+    }
 }
