@@ -10,7 +10,7 @@ import com.lqr.opengl.common.BaseActivity;
 public class LineActivity extends BaseActivity {
     @Override
     protected BaseRenderer getRenderer() {
-//        return new LineRenderer();
+//        return new LightRenderer();
         return new LineStripRender();
     }
 }

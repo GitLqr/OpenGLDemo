@@ -12,8 +12,8 @@ import android.view.KeyEvent;
  */
 public abstract class BaseActivity extends AppCompatActivity {
 
-    private MyGLSurfaceView myGLSurfaceView;
-    private BaseRenderer renderer;
+    protected MyGLSurfaceView myGLSurfaceView;
+    protected BaseRenderer renderer;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

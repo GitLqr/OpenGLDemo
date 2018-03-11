@@ -26,6 +26,10 @@
         <activity android:name=".demo7.RingActivity">
         </activity>
         <activity android:name=".demo8.CubeActivity">
+        </activity>
+        <activity android:name=".demo9.LightActivity">
+        </activity>
+        <activity android:name=".demo10.BlendActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

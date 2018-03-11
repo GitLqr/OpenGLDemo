@@ -27,7 +27,7 @@ public abstract class BaseRenderer implements GLSurfaceView.Renderer{
         gl.glViewport(0, 0, width, height);
         gl.glMatrixMode(GL10.GL_PROJECTION);
         gl.glLoadIdentity();
-        ratio = (float) width / (float) height;
+        ratio = (float) width / (float) height;// 坑：一定要先转成float再做计算
         gl.glFrustumf(-ratio, ratio, -1f, 1f, 3f, 7f);
     }
 }

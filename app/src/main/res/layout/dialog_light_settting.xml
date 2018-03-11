@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <CheckBox
+            android:id="@+id/cb_light_enable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开启光照" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="全局环境光--------------------------------------------------------------" />
+
+        <SeekBar
+            android:id="@+id/sb_global_ambient_r"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:max="100" />
+
+        <SeekBar
+            android:id="@+id/sb_global_ambient_g"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:max="100" />
+
+        <SeekBar
+            android:id="@+id/sb_global_ambient_b"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:max="100" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="材料属性（环境光与散射光的反射率）--------------------------------------------------------------" />
+
+        <SeekBar
+            android:id="@+id/sb_material_ambient_diffuse_r"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:max="100" />
+
+        <SeekBar
+            android:id="@+id/sb_material_ambient_diffuse_g"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:max="100" />
+
+        <SeekBar
+            android:id="@+id/sb_material_ambient_diffuse_b"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:max="100" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="材料属性（镜面光反射率）--------------------------------------------------------------" />
+
+        <SeekBar
+            android:id="@+id/sb_material_specular_r"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:max="100" />
+
+        <SeekBar
+            android:id="@+id/sb_material_specular_g"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:max="100" />
+
+        <SeekBar
+            android:id="@+id/sb_material_specular_b"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:max="100" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="材料属性（镜面光反射指数）--------------------------------------------------------------" />
+
+        <SeekBar
+            android:id="@+id/sb_material_specular_shininess"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:max="100" />
+
+        <CheckBox
+            android:id="@+id/cb_color_material_enable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开启颜色追踪（自动设置反射率）" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="物体的绘制颜色--------------------------------------------------------------" />
+
+        <SeekBar
+            android:id="@+id/sb_color_r"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:max="100"
+            android:progress="100" />
+
+        <SeekBar
+            android:id="@+id/sb_color_g"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:max="100"
+            android:progress="100" />
+
+        <SeekBar
+            android:id="@+id/sb_color_b"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:max="100"
+            android:progress="100" />
+
+        <CheckBox
+            android:id="@+id/cb_light0_enable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开启光源0" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="光源0环境光颜色--------------------------------------------------------------" />
+
+        <SeekBar
+            android:id="@+id/sb_light0_ambient_r"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:max="100" />
+
+        <SeekBar
+            android:id="@+id/sb_light0_ambient_g"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:max="100" />
+
+        <SeekBar
+            android:id="@+id/sb_light0_ambient_b"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:max="100" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="光源0散射光颜色--------------------------------------------------------------" />
+
+        <SeekBar
+            android:id="@+id/sb_light0_diffuse_r"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:max="100" />
+
+        <SeekBar
+            android:id="@+id/sb_light0_diffuse_g"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:max="100" />
+
+        <SeekBar
+            android:id="@+id/sb_light0_diffuse_b"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:max="100" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="光源0镜面光颜色--------------------------------------------------------------" />
+
+        <SeekBar
+            android:id="@+id/sb_light0_specular_r"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:max="100" />
+
+        <SeekBar
+            android:id="@+id/sb_light0_specular_g"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:max="100" />
+
+        <SeekBar
+            android:id="@+id/sb_light0_specular_b"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:max="100" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="光源0位置--------------------------------------------------------------" />
+
+        <SeekBar
+            android:id="@+id/sb_light0_posi_x"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:max="100" />
+
+        <SeekBar
+            android:id="@+id/sb_light0_posi_y"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:max="100" />
+
+        <SeekBar
+            android:id="@+id/sb_light0_posi_z"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:max="100" />
+    </LinearLayout>
+</ScrollView>
