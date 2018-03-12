@@ -30,6 +30,10 @@
         <activity android:name=".demo9.LightActivity">
         </activity>
         <activity android:name=".demo10.BlendActivity">
+        </activity>
+        <activity android:name=".demo11.FogActivity">
+        </activity>
+        <activity android:name=".demo12.TextureActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
